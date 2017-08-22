@@ -1,0 +1,31 @@
+REFERENCIA NUANCE
+
+https://nuancedev.github.io/samples/http/python/
+
+1 - Instalar homebrew y PIP
+2 - brew install libsamplerate
+3 - brew install portaudio
+4 - pip install numpy 
+5 - pip install -r requirements.txt 
+
+Contenido requirements.txt
+
+numpy
+http://people.csail.mit.edu/hubert/pyaudio/packages/pyaudio-0.2.8.tar.gz
+scikits.samplerate
+requests>=1.2.0
+
+6 - export PYTHONPATH=$PYTHONPATH:`pwd`
+7 - Actualizar credentials.json
+
+REFERENCIA SNOWBOW
+
+https://github.com/kitt-ai/snowboy
+
+1 - brew install swig portaudio sox
+2 - pip install pyaudio
+
+Luego ejecutar como:
+
+python watson_hotword.py models/Oye_Watson.pmdl
+
