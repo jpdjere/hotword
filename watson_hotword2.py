@@ -21,6 +21,7 @@ import transcribe_streaming_mic
 
 from os import system
 from AppKit import NSSpeechSynthesizer
+import ast
 
 
 # print blue("##########################################################")
@@ -42,14 +43,15 @@ def interrupt_callback():
 def restCall():
     print("Escuchando")
     #system('say Hola!')
-    voice = NSSpeechSynthesizer.defaultVoice()
     voice='Diego'
     os.system("say -v "+voice+" Sobre quien queres buscar informacion? ")
     #Activo el GoogleSTT y guardo el resultado en speech_transcript
     speech_transcript = urllib2.urlopen('http://localhost:3000/').read()
     print(speech_transcript)
+    speech_transcript = ast.literal_eval(speech_transcript)
+    print(speech_transcript)
     #Creo los parametros para enviar a EMQTT y lo envio
-    params = urllib.urlencode({'transcript':speech_transcript})
+    params = urllib.urlencode(speech_transcript)
     sent_data = urllib2.urlopen('http://localhost:1880/init?'+params).read()
 
     # transcribe_streaming_mic.recognize()
