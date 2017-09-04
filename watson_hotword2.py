@@ -44,9 +44,9 @@ def restCall():
     print("Escuchando")
     #system('say Hola!')
     voice='Diego'
-    os.system("say -v "+voice+" Sobre quien queres buscar informacion? ")
     #Activo el GoogleSTT y guardo el resultado en speech_transcript
     speech_transcript = urllib2.urlopen('http://localhost:3000/').read()
+    # os.system("say -v "+voice+" Sobre quien queres buscar informacion? ")
     print(speech_transcript)
     speech_transcript = ast.literal_eval(speech_transcript)
     print(speech_transcript)
