@@ -23,6 +23,14 @@ from os import system
 from AppKit import NSSpeechSynthesizer
 import ast
 
+#Cargo el audio
+import pygame
+import time
+pygame.init()
+pygame.mixer.music.load("siri1.wav")
+
+
+
 
 # print blue("##########################################################")
 # print blue("####  Cognitiva APU - Conversation Desktop Handler #####")
@@ -44,6 +52,8 @@ def restCall():
     print("Escuchando")
     #system('say Hola!')
     voice='Diego'
+    #Sonido que esta escuchando
+    pygame.mixer.music.play()
     #Activo el GoogleSTT y guardo el resultado en speech_transcript
     speech_transcript = urllib2.urlopen('http://localhost:3000/').read()
     # os.system("say -v "+voice+" Sobre quien queres buscar informacion? ")
